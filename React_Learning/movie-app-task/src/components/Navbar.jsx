@@ -23,7 +23,7 @@ const Navbar = () => {
             
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Employee App
+            Movie App
           </Typography>
          <Link to={'/'}> <Button variant="contained" color="primary">Home</Button></Link>
          <Link to={'/add'}><Button variant="contained" color="primary">Add</Button></Link>

@@ -4,17 +4,22 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Home from './components/Home'
 import Add from './components/Add'
+import Navbar from './components/Navbar'
+
+import { Route, Routes } from 'react-router-dom'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-    <h2>Movie Details</h2>
-      <Home/>
-      <br />
-      <h2>Add Movie Details</h2>
-      <Add/>
+    <Navbar/>
+    <br />
+    <Routes>
+      <Route path='/' element={<Home/>}></Route>
+      <Route path='/add' element={<Add/>}></Route>
+
+    </Routes>
     </>
   )
 }
