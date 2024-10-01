@@ -8,6 +8,7 @@ import Navbar from './components/Navbar'
 import { Route, Routes } from 'react-router-dom'
 
 // import MenuIcon from '@mui/icons-material/Menu';
+ //routes define the routing outlet
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,6 +17,7 @@ function App() {
     <>
     <Navbar/>
     <br />
+   
     <Routes>
       <Route path='/' element={<Home/>}></Route>
       <Route path='/add' element={<Add/>}></Route>
