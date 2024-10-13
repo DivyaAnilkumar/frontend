@@ -1,8 +1,11 @@
 import React from 'react'
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import Navbar from './Navbar';
 const Add = () => {
   return (
+    <>
+    <Navbar/>
     <div>
        <Box
       component="form"
@@ -19,6 +22,7 @@ const Add = () => {
       
     </Box>
     </div>
+    </>
   )
 }
 

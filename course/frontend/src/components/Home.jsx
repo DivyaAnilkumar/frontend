@@ -8,7 +8,9 @@ import Typography from '@mui/material/Typography';
 import { Container, Grid, Stack } from '@mui/material';
 import  {useNavigate} from 'react-router-dom';
 import axios from 'axios'
+import Navbar from './Navbar';
 const Home = () => {
+    const user = localStorage.getItem("username");
   const [inputs ,setInputs] = useState([])
   const navigate = useNavigate()
   let deleteCourse =(p)=>{
@@ -31,7 +33,11 @@ const Home = () => {
 }, []);
 
   return (
-
+<>
+<Navbar/>
+    <div>
+        Welcome {user}
+    </div>
     
     <Container>
             <Grid container spacing={8}>
@@ -77,6 +83,7 @@ const Home = () => {
                 ))}
             </Grid>
         </Container>
+        </>
   )
 }
 
