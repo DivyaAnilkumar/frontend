@@ -18,7 +18,7 @@ let validateUser=()=>{
     alert(res.data.message)
     if(res.data.usertoken){
       localStorage.setItem("token",res.data.usertoken);
-      // navigate('/home')
+       navigate('/home')
     }
   })
 //      if ((user.username=="admin" )&&(user.password=="123")) {
