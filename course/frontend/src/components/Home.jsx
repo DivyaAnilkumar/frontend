@@ -26,7 +26,7 @@ const Home = () => {
     })
   }
   useEffect(() => {
-    axios.get('http://localhost:3000/course')
+    axios.get('http://localhost:3000/course/')
         .then((res) => {
             setInputs(res.data); // Set fetched product data
         })
@@ -43,7 +43,7 @@ const Home = () => {
     </div>
     
     <Container>
-            <Grid container spacing={8}>
+            <Grid container spacing={8}>    
                 {inputs.map((input) => (
                     <Grid item key={input._id} xs={12} sm={6} md={4}>
                         <Card>
