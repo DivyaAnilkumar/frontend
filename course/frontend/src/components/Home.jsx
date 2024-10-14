@@ -13,6 +13,9 @@ const Home = () => {
     const user = localStorage.getItem("username");
   const [inputs ,setInputs] = useState([])
   const navigate = useNavigate()
+  function updateCourse(course){
+    navigate('/add',{state:{course}})
+  }
   let deleteCourse =(p)=>{
     axios.delete('http://localhost:3000/course/deleteCourse/'+p).then((res)=>{
       window.location.reload()
@@ -23,7 +26,7 @@ const Home = () => {
     })
   }
   useEffect(() => {
-    axios.get('http://localhost:3000/course')
+    axios.get('http://localhost:3000/course/')
         .then((res) => {
             setInputs(res.data); // Set fetched product data
         })
@@ -40,9 +43,9 @@ const Home = () => {
     </div>
     
     <Container>
-            <Grid container spacing={8}>
+            <Grid container spacing={8}>    
                 {inputs.map((input) => (
-                    <Grid item key={input.courseId} xs={12} sm={6} md={4}>
+                    <Grid item xs={12} sm={6} md={4}>
                         <Card>
                             <CardMedia
                                 component="img"
@@ -72,7 +75,7 @@ const Home = () => {
                                 </Typography>
 
                                 <Stack direction="row" spacing={4}>
-                                <Button  variant="contained" color="success" >Edit</Button>
+                                <Button  variant="contained" color="success" onClick={()=>{updateCourse(input)}} >Edit</Button>
 
                                 <Button  variant="contained" color="error" onClick={()=>{deleteCourse(input._id)}} >Delete</Button>
 
